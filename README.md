@@ -42,5 +42,7 @@ Platform: Microsoft .NET Core 3.1.
   - MessageType of 0 represents an email message.
   - MessageType of 1 represents an sms messsage.
 
+### Constraints
+  - Since the test account created with the SMS provider is a trial account, SMS messages will only be delivered to registered phone numbers. To test the SMS functionality, please contact me on 07065024754 to supply me with a valid phone number to be whitelisted.
 
 
