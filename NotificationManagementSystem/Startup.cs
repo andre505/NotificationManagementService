@@ -37,6 +37,8 @@ namespace NotificationManagementSystem
 
             services.AddScoped<IMessageRepository, MessageRepository>();
 
+
+
             services.AddControllers();
 
             // configure strongly typed settings object
@@ -46,7 +48,8 @@ namespace NotificationManagementSystem
 
             // configure DI for application services
             services.AddScoped<IMessageService, MessageService>();
-            services.AddTransient<MessageController>();
+            services.AddScoped<MessageController>();
+
             //swagger
             services.AddSwaggerGen(c =>
             {

@@ -146,7 +146,16 @@ namespace NotificationManagementSystem.Controllers
         {
             try
             {
-                return new System.ComponentModel.DataAnnotations.PhoneAttribute().IsValid(phone);
+                if ((phone.Length != 11))
+                {
+                    return false;
+
+                }
+                else
+                {
+                    return true;
+                }
+                //return new System.ComponentModel.DataAnnotations.PhoneAttribute().IsValid(phone);
             }
 
             catch { return false; }

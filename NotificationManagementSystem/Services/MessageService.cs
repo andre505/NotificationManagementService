@@ -81,12 +81,18 @@ namespace NotificationManagementSystem.Services
             {
                 TwilioClient.Init(_twilioSettings.AccountsId, _twilioSettings.AuthToken);
                 var retries = _messageSettings.Retries;
+
+                //format phone number 
+                string phone = message.To.Substring(1, 10);
+                string completephonenumber = "+234" + phone;
+
+                //
                 while (!status && retries > 0)
                 {
                     var messageResponse = MessageResource.Create(
                         body: message.Body,
                         from: new Twilio.Types.PhoneNumber($"{_twilioSettings.Phone}"),
-                        to: new Twilio.Types.PhoneNumber($"{message.To}")
+                        to: new Twilio.Types.PhoneNumber($"{completephonenumber}")
                     );
                     status = messageResponse.ErrorCode == null && messageResponse.ErrorMessage == null;
                     retries--;

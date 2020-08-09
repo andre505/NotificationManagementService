@@ -7,6 +7,10 @@ namespace NotificationManagementSystem.Data
 {
     public class MessageDbContext : DbContext
     {
+        public MessageDbContext()
+        {
+        }
+
         public MessageDbContext(DbContextOptions<MessageDbContext> options) : base(options)
         {
         }
