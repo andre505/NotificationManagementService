@@ -77,11 +77,14 @@ Error Codes:
 - 01 or 02 indicates a failed request with 02 caused by an exception.
 
 
-### Key Things to Note with API Response
-  - Status of true represents a successful request.
-  - Status of false represents a failed request.
+### Key Response Parameters Explained
+
   - MessageType of 0 represents an email message.
   - MessageType of 1 represents an sms messsage.
+
+  In the responses for request reports (Which is an array of requests made):
+  - Status of true represents a successful request.
+  - Status of false represents a failed request.
 
 ### Constraints
   - To run this solution locally, replace the current appsettings.json file with with the appsettings.json file provided in the email as secret keys for both the SMS and Email providers have been removed for security. 
