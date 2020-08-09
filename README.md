@@ -29,11 +29,52 @@ Platform: Microsoft .NET Core 3.1.
 
 ### Endpoints
   - https://localhost:44384/api/message: Request Type: GET => Returns an array of all messages sent.
-  - https://localhost:44384/api/message : Request Type: POST => Makes a new message request.
+  - https://localhost:44384/api/message : Request Type: POST => Initiates a new message request. Parameters values differ depending on message type. E.g. 'messageType' field accepts 0 for Email and 1 for SMS.
   - https://localhost:44384/api/Message/{status} Request Type: GET => Returns a list of failed or successful requests as indicated in the 'status' parameter.
 
 
-    To test the endpoints using Swagger UI, the service can be accessed at http://notificationsvc-001-site1.gtempurl.com/swagger/index.html.
+
+### Documentation
+
+  - To test the endpoints using Swagger UI, the service can be accessed at http://notificationsvc-001-site1.gtempurl.com/swagger/index.html.
+
+   - The Swagger UI contains a detailed documentation but find below sample requests and responses, to lend perspective.
+
+   
+    <strong> Sample Email Request</strong>
+  -   {
+        "to": "anthony.odu@hotmail.com",
+        "from": "tonidavis01@gmail.com",
+        "senderName": "Anthony Odu",
+        "subject": "Test Email",
+        "body": "Anthony's Notification Management Service: This is a test email. Thank you",
+        "messageType": 0
+      }
+
+    <strong>Sample SMS Message Request </strong>
+   -  {
+        "to": "07065024754",
+        "from": "Anthony Odu",
+        "senderName": "",
+        "subject": "",
+        "body": "Anthony's Notification Management Service: This is a test message. Thank you",
+        "messageType": 1
+      }
+
+          <strong> Sample Response</strong>
+   -  {
+        "status": "success",
+        "responseCode": "00",
+        "responseMessage": "Your message was sent successfully"
+      }
+
+### Error Handling
+
+Every request with a status of 200 returns the following fields: 'status', 'responseCode' and 'responseMessage';
+
+Error Codes:
+- 00 indicates a successful request
+- 01 or 02 indicates a failed request with 02 caused by an exception.
 
 
 ### Key Things to Note with API Response
@@ -43,6 +84,6 @@ Platform: Microsoft .NET Core 3.1.
   - MessageType of 1 represents an sms messsage.
 
 ### Constraints
-  - Since the test account created with the SMS provider is a trial account, SMS messages will only be delivered to registered phone numbers. To test the SMS functionality, please contact me on 07065024754 to supply me with a valid phone number to be whitelisted.
+  - To run this solution locally, replace the current appsettings.json file with with the appsettings.json file provided in the email as Secret Keys from both the SMS and Email providers have been removed for security. 
 
 

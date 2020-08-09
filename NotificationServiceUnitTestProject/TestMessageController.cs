@@ -16,9 +16,6 @@ namespace NotificationServiceUnitTestProject
     public class TestMessageController
     {
 
-        //private readonly IMessageService _messageService;
-        //private readonly MessageController _messageAPIController;
-
         private readonly MessageDbContext _dbContext;
         private readonly IMessageRepository _messageRepository;
 
@@ -31,7 +28,7 @@ namespace NotificationServiceUnitTestProject
         }
 
         [TestMethod]
-        public void GetAllProducts_ShouldReturnAllProducts()
+        public void GetAllMessages_ShouldReturnAllMessages()
         {
 
             var articleId = 5;

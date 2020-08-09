@@ -90,7 +90,7 @@ namespace NotificationManagementSystem.Services
                 while (!status && retries > 0)
                 {
                     var messageResponse = MessageResource.Create(
-                        body: message.Body,
+                        body: "Message From" + message.From + ": " +message.Body,
                         from: new Twilio.Types.PhoneNumber($"{_twilioSettings.Phone}"),
                         to: new Twilio.Types.PhoneNumber($"{completephonenumber}")
                     );

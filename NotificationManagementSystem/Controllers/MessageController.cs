@@ -68,7 +68,7 @@ namespace NotificationManagementSystem.Controllers
                     To = message.To,
                     SenderName = message.SenderName,
                     Status = status,
-                    CreatedOn = DateTime.Now
+                    CreatedOn = DateTime.UtcNow.AddHours(1)
 
                 };
 
@@ -81,6 +81,7 @@ namespace NotificationManagementSystem.Controllers
                     response.status = "success";
                     response.responseCode = "00";
                     response.responseMessage = "Your message was sent successfully";
+                    response.TimeStamp = DateTime.UtcNow.AddHours(1).ToString("dd/MMM/yyyy:HH:mm:ss");
                     return StatusCode((int)HttpStatusCode.OK, response);
                 }
                 response.status = "fail";
@@ -118,6 +119,7 @@ namespace NotificationManagementSystem.Controllers
             {
                 case MessageType.Email:
                     if (!ValidEmail(message.To)) { errors.Add("Please enter a valid email"); }
+                    if (!ValidEmail(message.From)) { errors.Add("Please enter a valid email"); }
                     if (string.IsNullOrWhiteSpace(message.Subject)) { errors.Add("Subject cannot be empty"); }
                     break;
                 case MessageType.Sms:

@@ -51,6 +51,7 @@ namespace NotificationManagementSystem.Models
         public string status { get; set; }
         public string responseCode { get; set; }
         public string responseMessage { get; set; }
+        public string TimeStamp { get; set; }
 
     }
 }
