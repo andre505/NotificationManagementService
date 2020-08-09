@@ -11,6 +11,7 @@ Platform: Microsoft .NET Core 3.1.
   - Select 'Clone or Checkout Code'.
   - Enter the .git url for Notification Management Service => (https://github.com/andre505/NotificationManagementService.git)
   - Click clone.
+  - In the package manager console, run 'package reinstall' to reinstall all packages.
   - Run App.
 
 ### Technologies Used
@@ -33,12 +34,11 @@ Platform: Microsoft .NET Core 3.1.
   - https://localhost:44384/api/Message/{status} Request Type: GET => Returns a list of failed or successful requests as indicated in the 'status' parameter.
 
 
-
 ### Documentation
 
   - To test the endpoints using Swagger UI, the service can be accessed at http://notificationsvc-001-site1.gtempurl.com/swagger/index.html.
 
-   - The Swagger UI contains a detailed documentation but find below sample requests and response, to lend perspective.
+   - The link above contains a detailed documentation but find below sample requests and response to lend perspective.
 
    
   Sample Email Request
@@ -82,7 +82,7 @@ Error Codes:
   - MessageType of 0 represents an email message.
   - MessageType of 1 represents an sms messsage.
 
-  In the responses for request reports (Which is an array of requests made):
+  In the responses for request reports (which returns an array of requests made):
   - Status of true represents a successful request.
   - Status of false represents a failed request.
 
