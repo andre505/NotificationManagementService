@@ -20,10 +20,20 @@ Platform: Microsoft .NET Core 3.1.
     Entity Framework Core
     Swagger UI
 
+### Key Features Implemented
+    1. SMS Delivery
+    2. Email Delivery
+    3. REST API
+    4. SQL Database
+    5. Unit Testing
+
 ### Endpoints
   - https://localhost:44384/api/message: Request Type: GET => Returns an array of all messages sent.
   - https://localhost:44384/api/message : Request Type: POST => Makes a new message request.
   - https://localhost:44384/api/Message/{status} Request Type: GET => Returns a list of failed or successful requests as indicated in the 'status' parameter.
+
+
+    To test the endpoints using Swagger UI, the service can be accessed at http://notificationsvc-001-site1.gtempurl.com/swagger/index.html.
 
 
 ### Key Things to Note with API Response
