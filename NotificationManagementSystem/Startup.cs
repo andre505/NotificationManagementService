@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NotificationManagementSystem.Controllers;
 using NotificationManagementSystem.Data;
 using NotificationManagementSystem.Helpers;
 using NotificationManagementSystem.Services;
@@ -45,7 +46,7 @@ namespace NotificationManagementSystem
 
             // configure DI for application services
             services.AddScoped<IMessageService, MessageService>();
-
+            services.AddTransient<MessageController>();
             //swagger
             services.AddSwaggerGen(c =>
             {
