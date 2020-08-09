@@ -121,7 +121,7 @@ namespace NotificationManagementSystem.Controllers
                     if (string.IsNullOrWhiteSpace(message.Subject)) { errors.Add("Subject cannot be empty"); }
                     break;
                 case MessageType.Sms:
-                    if (!ValidPhone(message.To)) { errors.Add("Please enter a valid phone"); }
+                    if (!ValidPhone(message.To)) { errors.Add("Please enter a valid 11 digit phone number. E.g. 07065024754"); }
                     break;
                 default:
                     errors.Add("Invalid message type");

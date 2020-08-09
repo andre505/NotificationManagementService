@@ -53,7 +53,7 @@ namespace NotificationManagementSystem
             //swagger
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc(name: "v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Notification Service", Version = "v1" });
+                c.SwaggerDoc(name: "v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Notification Management Service", Version = "v1" });
             });
         }
 
@@ -70,7 +70,7 @@ namespace NotificationManagementSystem
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "NotificationService");
+                c.SwaggerEndpoint(url: "/swagger/v1/swagger.json", name: "Notification Management Service");
             });
             app.UseHttpsRedirection();
 
