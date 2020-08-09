@@ -38,10 +38,10 @@ Platform: Microsoft .NET Core 3.1.
 
   - To test the endpoints using Swagger UI, the service can be accessed at http://notificationsvc-001-site1.gtempurl.com/swagger/index.html.
 
-   - The Swagger UI contains a detailed documentation but find below sample requests and responses, to lend perspective.
+   - The Swagger UI contains a detailed documentation but find below sample requests and response, to lend perspective.
 
    
-    <strong> Sample Email Request</strong>
+  Sample Email Request
   -   {
         "to": "anthony.odu@hotmail.com",
         "from": "tonidavis01@gmail.com",
@@ -51,7 +51,7 @@ Platform: Microsoft .NET Core 3.1.
         "messageType": 0
       }
 
-    <strong>Sample SMS Message Request </strong>
+  Sample SMS Message Request
    -  {
         "to": "07065024754",
         "from": "Anthony Odu",
@@ -61,7 +61,7 @@ Platform: Microsoft .NET Core 3.1.
         "messageType": 1
       }
 
-          <strong> Sample Response</strong>
+  Sample Response
    -  {
         "status": "success",
         "responseCode": "00",
@@ -84,6 +84,6 @@ Error Codes:
   - MessageType of 1 represents an sms messsage.
 
 ### Constraints
-  - To run this solution locally, replace the current appsettings.json file with with the appsettings.json file provided in the email as Secret Keys from both the SMS and Email providers have been removed for security. 
+  - To run this solution locally, replace the current appsettings.json file with with the appsettings.json file provided in the email as secret keys for both the SMS and Email providers have been removed for security. 
 
 
